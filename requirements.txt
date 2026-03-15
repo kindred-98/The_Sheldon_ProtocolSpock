@@ -1,0 +1,4 @@
+# Sin dependencias externas.
+# Este proyecto usa únicamente la biblioteca estándar de Python 3.8+:
+#   - random  → elección aleatoria de la computadora
+#   - os      → limpiar la terminal entre rondas

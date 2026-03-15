@@ -1,0 +1,33 @@
+# Entornos virtuales
+venv/
+.venv/
+env/
+.env/
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Archivos de distribución / empaquetado
+dist/
+build/
+*.egg-info/
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Variables de entorno
+*.env
+.env
