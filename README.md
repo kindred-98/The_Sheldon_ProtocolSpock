@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🪨📄✂️🦎🖖 The Sheldon Protocol Spock
+# 🪨📄✂️ The Sheldon Protocol Spock 🦎🖖
 
 **Juego interactivo de Piedra, Papel, Tijera, Lagarto, Spock desarrollado en Python**  
 *Arquitectura modular · CLI interactivo · Testing automatizado · Historial de sesión*
@@ -89,16 +89,16 @@ El proyecto fue construido con foco en:
 ┌─────────────────────────────────────────────────────────────────┐
 │                  The Sheldon Protocol Spock                     │
 │                                                                 │
-│  ┌───────────────┐          ┌───────────────────────────────┐  │
-│  │    main.py    │          │            src/               │  │
-│  │               │◄────────►│                               │  │
-│  │  Menú principal          │  config.py  → constantes      │  │
-│  │  KeyboardInterrupt       │  game.py    → lógica pura     │  │
-│  │               │          │  player.py  → entradas        │  │
-│  └───────────────┘          │  ui.py      → presentación    │  │
-│                             │  session.py → coordinación    │  │
-│                             │  history.py → historial       │  │
-│                             └───────────────────────────────┘  │
+│  ┌───────────────┐          ┌───────────────────────────────┐   │
+│  │    main.py    │          │            src/               │   │
+│  │               │◄────────►│                               │   │
+│  │Menú principal │          │  config.py  → constantes      │   │
+│  │KeyboardInterrupt         │  game.py    → lógica pura     │   │
+│  │               │          │  player.py  → entradas        │   │
+│  └───────────────┘          │  ui.py      → presentación    │   │
+│                             │  session.py → coordinación    │   │
+│                             │  history.py → historial       │   │
+│                             └───────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
