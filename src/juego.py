@@ -22,6 +22,13 @@ EMOJIS = {
 
 # ── Funciones ──────────────────────────────────────────────────────────────────
 
+def obtener_eleccion_computadora():
+    """Devuelve una elección aleatoria para la computadora."""
+    eleccion = random.choice(list(OPCIONES.values()))
+    print(f"\nLa computadora eligió: {EMOJIS[eleccion]} {eleccion}")
+    return eleccion
+
+
 def obtener_eleccion_jugador():
     """Muestra el menú de opciones y devuelve la elección del jugador como string."""
     print("\nElige tu jugada:")
@@ -42,5 +49,6 @@ def obtener_eleccion_jugador():
 # ── Punto de entrada temporal (para probar este commit) ───────────────────────
 
 if __name__ == "__main__":
-    jugada = obtener_eleccion_jugador()
-    print(f"\nElegiste: {EMOJIS[jugada]} {jugada}")
+    jugada_jugador = obtener_eleccion_jugador()
+    print(f"Tú elegiste:          {EMOJIS[jugada_jugador]} {jugada_jugador}")
+    jugada_pc = obtener_eleccion_computadora()
