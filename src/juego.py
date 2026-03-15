@@ -32,6 +32,11 @@ REGLAS = {
 
 # ── Funciones ──────────────────────────────────────────────────────────────────
 
+def mostrar_marcador(victorias, empates, derrotas):
+    """Muestra el marcador actual de la sesión."""
+    print(f"\nMarcador → Tú: {victorias} | Empates: {empates} | PC: {derrotas}")
+
+
 def determinar_ganador(jugador, computadora):
     """Compara las elecciones y devuelve el resultado: 'victoria', 'derrota' o 'empate'."""
     if jugador == computadora:
@@ -74,7 +79,19 @@ def obtener_eleccion_jugador():
 # ── Punto de entrada temporal (para probar este commit) ───────────────────────
 
 if __name__ == "__main__":
+    victorias, empates, derrotas = 0, 0, 0
+
     jugada_jugador = obtener_eleccion_jugador()
     print(f"\nTú elegiste:          {EMOJIS[jugada_jugador]} {jugada_jugador}")
     jugada_pc = obtener_eleccion_computadora()
-    determinar_ganador(jugada_jugador, jugada_pc)
+
+    resultado = determinar_ganador(jugada_jugador, jugada_pc)
+
+    if resultado == "victoria":
+        victorias += 1
+    elif resultado == "empate":
+        empates += 1
+    else:
+        derrotas += 1
+
+    mostrar_marcador(victorias, empates, derrotas)
