@@ -78,20 +78,40 @@ def obtener_eleccion_jugador():
 
 # ── Punto de entrada temporal (para probar este commit) ───────────────────────
 
+def pedir_numero_rondas():
+    """Solicita al jugador cuántas rondas quiere jugar. Devuelve un entero positivo."""
+    while True:
+        try:
+            rondas = int(input("\n¿Cuántas rondas quieres jugar? (1-10): "))
+            if 1 <= rondas <= 10:
+                return rondas
+            else:
+                print("❌ Introduce un número entre 1 y 10.")
+        except ValueError:
+            print("❌ Entrada inválida. Debes introducir un número.")
+
+
+# ── Punto de entrada temporal (para probar este commit) ───────────────────────
+
 if __name__ == "__main__":
     victorias, empates, derrotas = 0, 0, 0
 
-    jugada_jugador = obtener_eleccion_jugador()
-    print(f"\nTú elegiste:          {EMOJIS[jugada_jugador]} {jugada_jugador}")
-    jugada_pc = obtener_eleccion_computadora()
+    total_rondas = pedir_numero_rondas()
 
-    resultado = determinar_ganador(jugada_jugador, jugada_pc)
+    for ronda in range(1, total_rondas + 1):
+        print(f"\n──── Ronda {ronda} de {total_rondas} ────")
 
-    if resultado == "victoria":
-        victorias += 1
-    elif resultado == "empate":
-        empates += 1
-    else:
-        derrotas += 1
+        jugada_jugador = obtener_eleccion_jugador()
+        print(f"\nTú elegiste:          {EMOJIS[jugada_jugador]} {jugada_jugador}")
+        jugada_pc = obtener_eleccion_computadora()
 
-    mostrar_marcador(victorias, empates, derrotas)
+        resultado = determinar_ganador(jugada_jugador, jugada_pc)
+
+        if resultado == "victoria":
+            victorias += 1
+        elif resultado == "empate":
+            empates += 1
+        else:
+            derrotas += 1
+
+        mostrar_marcador(victorias, empates, derrotas)
