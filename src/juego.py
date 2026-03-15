@@ -20,7 +20,32 @@ EMOJIS = {
 }
 
 
+# Cada opción tiene un diccionario con las opciones que vence y el motivo.
+REGLAS = {
+    "Piedra":  {"Tijera": "aplasta",      "Lagarto": "aplasta"},
+    "Papel":   {"Piedra": "cubre",         "Spock":   "desautoriza"},
+    "Tijera":  {"Papel":  "corta",         "Lagarto": "decapita"},
+    "Lagarto": {"Papel":  "come",          "Spock":   "envenena"},
+    "Spock":   {"Tijera": "destroza",      "Piedra":  "vaporiza"},
+}
+
+
 # ── Funciones ──────────────────────────────────────────────────────────────────
+
+def determinar_ganador(jugador, computadora):
+    """Compara las elecciones y devuelve el resultado: 'victoria', 'derrota' o 'empate'."""
+    if jugador == computadora:
+        print("\n🤝 ¡Empate!")
+        return "empate"
+    elif computadora in REGLAS[jugador]:
+        motivo = REGLAS[jugador][computadora]
+        print(f"\n✅ ¡Ganaste! {jugador} {motivo} a {computadora}.")
+        return "victoria"
+    else:
+        motivo = REGLAS[computadora][jugador]
+        print(f"\n❌ ¡Perdiste! {computadora} {motivo} a {jugador}.")
+        return "derrota"
+
 
 def obtener_eleccion_computadora():
     """Devuelve una elección aleatoria para la computadora."""
@@ -50,5 +75,6 @@ def obtener_eleccion_jugador():
 
 if __name__ == "__main__":
     jugada_jugador = obtener_eleccion_jugador()
-    print(f"Tú elegiste:          {EMOJIS[jugada_jugador]} {jugada_jugador}")
+    print(f"\nTú elegiste:          {EMOJIS[jugada_jugador]} {jugada_jugador}")
     jugada_pc = obtener_eleccion_computadora()
+    determinar_ganador(jugada_jugador, jugada_pc)
