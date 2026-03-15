@@ -78,6 +78,27 @@ def obtener_eleccion_jugador():
 
 # ── Punto de entrada temporal (para probar este commit) ───────────────────────
 
+def limpiar_pantalla():
+    """Limpia la terminal de forma compatible con Windows y Linux/Mac."""
+    os.system("cls" if os.name == "nt" else "clear")
+
+
+def mostrar_bienvenida():
+    """Muestra la pantalla de bienvenida con el título y las reglas del juego."""
+    limpiar_pantalla()
+    print("╔══════════════════════════════════════════════╗")
+    print("║   🪨 📄 ✂️  🦎 🖖  THE SHELDON PROTOCOL     ║")
+    print("╚══════════════════════════════════════════════╝")
+    print()
+    print("📋 REGLAS:")
+    print("  • Tijera  corta Papel    | Tijera  decapita Lagarto")
+    print("  • Papel   cubre Piedra   | Papel   desautoriza Spock")
+    print("  • Piedra  aplasta Tijera | Piedra  aplasta Lagarto")
+    print("  • Lagarto come Papel     | Lagarto envenena Spock")
+    print("  • Spock   destroza Tijera| Spock   vaporiza Piedra")
+    print()
+
+
 def pedir_numero_rondas():
     """Solicita al jugador cuántas rondas quiere jugar. Devuelve un entero positivo."""
     while True:
