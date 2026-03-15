@@ -1,3 +1,8 @@
+"""
+The Sheldon Protocol — Piedra, Papel, Tijera, Lagarto, Spock
+Módulo principal del juego. Ejecutar directamente con: python src/juego.py
+"""
+
 import random
 import os
 
@@ -19,7 +24,6 @@ EMOJIS = {
     "Spock":   "🖖",
 }
 
-
 # Cada opción tiene un diccionario con las opciones que vence y el motivo.
 REGLAS = {
     "Piedra":  {"Tijera": "aplasta",      "Lagarto": "aplasta"},
@@ -31,52 +35,6 @@ REGLAS = {
 
 
 # ── Funciones ──────────────────────────────────────────────────────────────────
-
-def mostrar_marcador(victorias, empates, derrotas):
-    """Muestra el marcador actual de la sesión."""
-    print(f"\nMarcador → Tú: {victorias} | Empates: {empates} | PC: {derrotas}")
-
-
-def determinar_ganador(jugador, computadora):
-    """Compara las elecciones y devuelve el resultado: 'victoria', 'derrota' o 'empate'."""
-    if jugador == computadora:
-        print("\n🤝 ¡Empate!")
-        return "empate"
-    elif computadora in REGLAS[jugador]:
-        motivo = REGLAS[jugador][computadora]
-        print(f"\n✅ ¡Ganaste! {jugador} {motivo} a {computadora}.")
-        return "victoria"
-    else:
-        motivo = REGLAS[computadora][jugador]
-        print(f"\n❌ ¡Perdiste! {computadora} {motivo} a {jugador}.")
-        return "derrota"
-
-
-def obtener_eleccion_computadora():
-    """Devuelve una elección aleatoria para la computadora."""
-    eleccion = random.choice(list(OPCIONES.values()))
-    print(f"\nLa computadora eligió: {EMOJIS[eleccion]} {eleccion}")
-    return eleccion
-
-
-def obtener_eleccion_jugador():
-    """Muestra el menú de opciones y devuelve la elección del jugador como string."""
-    print("\nElige tu jugada:")
-    for numero, nombre in OPCIONES.items():
-        print(f"  {numero}. {EMOJIS[nombre]} {nombre}")
-
-    while True:
-        try:
-            eleccion = int(input("\nTu elección (1-5): "))
-            if eleccion in OPCIONES:
-                return OPCIONES[eleccion]
-            else:
-                print("❌ Opción no válida. Introduce un número del 1 al 5.")
-        except ValueError:
-            print("❌ Entrada inválida. Debes introducir un número.")
-
-
-# ── Punto de entrada temporal (para probar este commit) ───────────────────────
 
 def limpiar_pantalla():
     """Limpia la terminal de forma compatible con Windows y Linux/Mac."""
@@ -121,6 +79,11 @@ def mostrar_resumen(victorias, empates, derrotas, total_rondas):
     print()
 
 
+def mostrar_marcador(victorias, empates, derrotas):
+    """Muestra el marcador actual de la sesión."""
+    print(f"\nMarcador → Tú: {victorias} | Empates: {empates} | PC: {derrotas}")
+
+
 def pedir_numero_rondas():
     """Solicita al jugador cuántas rondas quiere jugar. Devuelve un entero positivo."""
     while True:
@@ -134,9 +97,47 @@ def pedir_numero_rondas():
             print("❌ Entrada inválida. Debes introducir un número.")
 
 
-# ── Punto de entrada temporal (para probar este commit) ───────────────────────
+def obtener_eleccion_computadora():
+    """Devuelve una elección aleatoria para la computadora."""
+    eleccion = random.choice(list(OPCIONES.values()))
+    print(f"\nLa computadora eligió: {EMOJIS[eleccion]} {eleccion}")
+    return eleccion
 
-if __name__ == "__main__":
+
+def obtener_eleccion_jugador():
+    """Muestra el menú de opciones y devuelve la elección del jugador como string."""
+    print("\nElige tu jugada:")
+    for numero, nombre in OPCIONES.items():
+        print(f"  {numero}. {EMOJIS[nombre]} {nombre}")
+
+    while True:
+        try:
+            eleccion = int(input("\nTu elección (1-5): "))
+            if eleccion in OPCIONES:
+                return OPCIONES[eleccion]
+            else:
+                print("❌ Opción no válida. Introduce un número del 1 al 5.")
+        except ValueError:
+            print("❌ Entrada inválida. Debes introducir un número.")
+
+
+def determinar_ganador(jugador, computadora):
+    """Compara las elecciones y devuelve el resultado: 'victoria', 'derrota' o 'empate'."""
+    if jugador == computadora:
+        print("\n🤝 ¡Empate!")
+        return "empate"
+    elif computadora in REGLAS[jugador]:
+        motivo = REGLAS[jugador][computadora]
+        print(f"\n✅ ¡Ganaste! {jugador} {motivo} a {computadora}.")
+        return "victoria"
+    else:
+        motivo = REGLAS[computadora][jugador]
+        print(f"\n❌ ¡Perdiste! {computadora} {motivo} a {jugador}.")
+        return "derrota"
+
+
+def jugar():
+    """Gestiona una partida completa: rondas, marcador y resumen final."""
     victorias, empates, derrotas = 0, 0, 0
 
     mostrar_bienvenida()
@@ -165,3 +166,14 @@ if __name__ == "__main__":
             input("\nPulsa Enter para la siguiente ronda...")
 
     mostrar_resumen(victorias, empates, derrotas, total_rondas)
+
+
+# ── Punto de entrada ───────────────────────────────────────────────────────────
+
+if __name__ == "__main__":
+    while True:
+        jugar()
+        respuesta = input("¿Quieres jugar otra partida? (s/n): ").strip().lower()
+        if respuesta != "s":
+            print("\n👋 ¡Hasta la próxima! Bazinga.\n")
+            break
