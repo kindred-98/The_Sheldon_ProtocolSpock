@@ -99,6 +99,28 @@ def mostrar_bienvenida():
     print()
 
 
+def mostrar_resumen(victorias, empates, derrotas, total_rondas):
+    """Muestra el resumen completo al final de la partida con estadísticas."""
+    porcentaje = (victorias / total_rondas) * 100
+
+    print("\n╔══════════════════════════════════════════════╗")
+    print("║              📊 RESUMEN FINAL                ║")
+    print("╚══════════════════════════════════════════════╝")
+    print(f"\n  Victorias : {victorias}")
+    print(f"  Empates   : {empates}")
+    print(f"  Derrotas  : {derrotas}")
+    print(f"\n  Porcentaje de victorias: {porcentaje:.1f}%")
+    print()
+
+    if victorias > derrotas:
+        print("  🏆 ¡Ganaste la partida! Sheldon estaría orgulloso.")
+    elif derrotas > victorias:
+        print("  💻 ¡Ganó la computadora! Bazzinga.")
+    else:
+        print("  🤝 ¡Partida empatada! Digno rival.")
+    print()
+
+
 def pedir_numero_rondas():
     """Solicita al jugador cuántas rondas quiere jugar. Devuelve un entero positivo."""
     while True:
@@ -117,9 +139,11 @@ def pedir_numero_rondas():
 if __name__ == "__main__":
     victorias, empates, derrotas = 0, 0, 0
 
+    mostrar_bienvenida()
     total_rondas = pedir_numero_rondas()
 
     for ronda in range(1, total_rondas + 1):
+        limpiar_pantalla()
         print(f"\n──── Ronda {ronda} de {total_rondas} ────")
 
         jugada_jugador = obtener_eleccion_jugador()
@@ -136,3 +160,8 @@ if __name__ == "__main__":
             derrotas += 1
 
         mostrar_marcador(victorias, empates, derrotas)
+
+        if ronda < total_rondas:
+            input("\nPulsa Enter para la siguiente ronda...")
+
+    mostrar_resumen(victorias, empates, derrotas, total_rondas)
