@@ -95,15 +95,33 @@ python src/juego.py
 ## 📁 Estructura del proyecto
 
 ```
-The_Sheldon_Protocol/
+The_Sheldon_ProtocolSpock/
 │
+├── main.py                        ← punto de entrada, solo arranca el menú
 ├── README.md
 ├── .gitignore
-├── requirements.txt
+├── requirements.txt               ← añadir pytest
+├── pytest.ini                     ← configuración de pytest
+│
 ├── src/
-│   └── juego.py          ← lógica completa del juego
+│   ├── __init__.py
+│   ├── config.py                  ← constantes: OPCIONES, EMOJIS, REGLAS
+│   ├── game.py                    ← lógica pura: determinar_ganador
+│   ├── player.py                  ← obtener_eleccion_jugador / computadora
+│   ├── ui.py                      ← todo lo visual: bienvenida, marcador, resumen
+│   ├── session.py                 ← gestión de la partida: bucle de rondas
+│   └── history.py                 ← historial en memoria: guardar y consultar
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_game.py               ← tests de determinar_ganador
+│   ├── test_player.py             ← tests de validaciones de entrada
+│   ├── test_history.py            ← tests del historial
+│   └── test_session.py            ← tests de la sesión
+│
 └── docs/
-    └── asistencia_ia.md  ← prompts y metodología IA usada
+    ├── asistencia_IA.md
+    └── mis_decisiones_IA.md       ← nuevo
 ```
 
 ---
