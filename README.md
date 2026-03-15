@@ -63,4 +63,4 @@ piedra-papel-tijera-spock/
 
 ## Documentación de asistencia IA
 
-Los prompts utilizados con IA durante el desarrollo están documentados en [`docs/asistencia_ia.md`](docs/asistencia_ia.md).
+Los prompts utilizados con IA durante el desarrollo están documentados en [`docs/asistencia_IA.md`](docs/asistencia_IA.md).
