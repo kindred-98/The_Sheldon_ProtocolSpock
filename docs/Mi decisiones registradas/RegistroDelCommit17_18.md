@@ -64,7 +64,3 @@ Buscó todas las ocurrencias con `grep` y actualizó: `README.md`, `asistencia_i
 
 ---
 
-## Principio aplicado en todo el proyecto
-
-> Nunca aceptar código de la IA sin entenderlo.  
-> Antes de cada commit: revisar línea a línea, probar manualmente, ser capaz de explicar qué hace cada función.
