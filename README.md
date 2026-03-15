@@ -1,12 +1,66 @@
-# 🪨📄✂️🦎🖖 Piedra, Papel, Tijera, Lagarto, Spock
+# 🪨📄✂️🦎🖖 The Sheldon Protocol
 
-Juego de terminal en Python basado en la variante extendida popularizada por la serie *The Big Bang Theory*.
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/Licencia-MIT-green?style=flat)
+![Status](https://img.shields.io/badge/Estado-Completado-brightgreen?style=flat)
+![Commits](https://img.shields.io/badge/Commits-10-orange?style=flat)
+![AI Assisted](https://img.shields.io/badge/Desarrollado%20con-IA-blueviolet?style=flat)
 
-Jugador humano contra la computadora, con sistema de puntuación, estadísticas y validación de entradas.
+> Versión extendida del clásico Piedra, Papel o Tijera con las 5 opciones de *The Big Bang Theory*.  
+> Jugador humano vs computadora · Sistema de puntuación · Estadísticas de sesión · CLI interactivo.
 
 ---
 
-## Reglas del juego
+## 🎮 Ejemplo de ejecución
+
+```
+╔══════════════════════════════════════════════════╗
+║   🪨 📄 ✂️  🦎 🖖  THE SHELDON PROTOCOL_SPOCK  ║
+╚══════════════════════════════════════════════════╝
+
+📋 REGLAS:
+  • Tijera  corta Papel    | Tijera  decapita Lagarto
+  • Papel   cubre Piedra   | Papel   desautoriza Spock
+  • Piedra  aplasta Tijera | Piedra  aplasta Lagarto
+  • Lagarto come Papel     | Lagarto envenena Spock
+  • Spock   destroza Tijera| Spock   vaporiza Piedra
+
+¿Cuántas rondas quieres jugar? (1-10): 3
+
+──── Ronda 1 de 3 ────
+
+Elige tu jugada:
+  1. 🪨 Piedra
+  2. 📄 Papel
+  3. ✂️  Tijera
+  4. 🦎 Lagarto
+  5. 🖖 Spock
+
+Tu elección (1-5): 1
+
+Tú elegiste:          🪨 Piedra
+La computadora eligió: 🦎 Lagarto
+
+✅ ¡Ganaste! Piedra aplasta a Lagarto.
+
+Marcador → Tú: 1 | Empates: 0 | PC: 0
+
+╔══════════════════════════════════════════════╗
+║              📊 RESUMEN FINAL                ║
+╚══════════════════════════════════════════════╝
+
+  Victorias : 2
+  Empates   : 0
+  Derrotas  : 1
+
+  Porcentaje de victorias: 66.7%
+
+  🏆 ¡Ganaste la partida! Sheldon estaría orgulloso.
+```
+
+---
+
+## 📋 Reglas del juego
 
 | Opción | Vence a | Motivo |
 |--------|---------|--------|
@@ -23,44 +77,49 @@ Jugador humano contra la computadora, con sistema de puntuación, estadísticas 
 
 ---
 
-## Requisitos
-
-- Python 3.8 o superior
-- Sin dependencias externas (solo biblioteca estándar)
-
----
-
-## Cómo ejecutar
+## 🚀 Cómo ejecutar
 
 ```bash
-
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/The_Sheldon_Protocol.git
-cd The_Sheldon_Protocol
+git clone https://github.com/kindred-98/The_Sheldon_ProtocolSpock.git
+cd The_Sheldon_ProtocolSpock
 
 # Ejecutar el juego
 python src/juego.py
-
 ```
+
+**Requisitos:** Python 3.8 o superior · Sin dependencias externas.
 
 ---
 
-## Estructura del proyecto
+## 📁 Estructura del proyecto
 
 ```
-piedra-papel-tijera-spock/
+The_Sheldon_Protocol/
 │
 ├── README.md
 ├── .gitignore
 ├── requirements.txt
 ├── src/
-│   └── juego.py
+│   └── juego.py          ← lógica completa del juego
 └── docs/
-    └── asistencia_ia.md
+    └── asistencia_ia.md  ← prompts y metodología IA usada
 ```
 
 ---
 
-## Documentación de asistencia IA
+## 🤖 Desarrollado con IA
 
-Los prompts utilizados con IA durante el desarrollo están documentados en [`docs/asistencia_IA.md`](docs/asistencia_IA.md).
+Este proyecto fue desarrollado aplicando el **AI Development Loop**:
+
+```
+Definir → Arquitectura → Plan → Código → Review → Optimizar
+```
+
+Cada commit representa una iteración del loop, desde la configuración inicial hasta la versión final. Los prompts utilizados, las decisiones tomadas y las reflexiones del proceso están documentados en [`docs/asistencia_IA.md`](docs/asistencia_IA.md).
+
+---
+
+## 📄 Licencia
+
+MIT — libre para usar, modificar y distribuir.
