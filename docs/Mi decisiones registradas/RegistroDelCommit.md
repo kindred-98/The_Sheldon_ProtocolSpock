@@ -132,13 +132,13 @@ The_Sheldon_ProtocolSpock/
 
 | Commit | Descripción |
 |--------|-------------|
-| 11 | Reestructura carpetas, `__init__.py`, constantes a `config.py` |
-| 12 | Lógica a `game.py`, presentación a `ui.py` |
-| 13 | Entradas a `player.py`, sesión a `session.py` |
-| 14 | `history.py` con historial en memoria |
-| 15 | `main.py` con menú principal |
-| 16 | Tests completos con pytest |
-| 17 | `mis_decisiones_IA.md`, `pytest.ini`, `CHANGELOG.md`, README actualizado |
+| 17 | Reestructura carpetas, `__init__.py`, constantes a `config.py` |
+| 18 | Lógica a `game.py`, presentación a `ui.py` |
+| 19 | Entradas a `player.py`, sesión a `session.py` |
+| 20 | `history.py` con historial en memoria |
+| 21 | `main.py` con menú principal |
+| 22 | Tests completos con pytest |
+| 23 | `mis_decisiones_IA.md`, `pytest.ini`, `CHANGELOG.md`, README actualizado |
 
 ---
 

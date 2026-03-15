@@ -1,5 +1,5 @@
 """
-The Sheldon Protocol — Piedra, Papel, Tijera, Lagarto, Spock
+The Sheldon Protocol Spock — Piedra, Papel, Tijera, Lagarto, Spock
 Módulo principal del juego. Ejecutar directamente con: python src/juego.py
 """
 
@@ -45,7 +45,7 @@ def mostrar_bienvenida():
     """Muestra la pantalla de bienvenida con el título y las reglas del juego."""
     limpiar_pantalla()
     print("╔══════════════════════════════════════════════╗")
-    print("║   🪨 📄 ✂️  🦎 🖖  THE SHELDON PROTOCOL     ║")
+    print("║  🪨 📄 ✂️  🦎 🖖 THE SHELDON PROTOCOL SPOCK ║")
     print("╚══════════════════════════════════════════════╝")
     print()
     print("📋 REGLAS:")
