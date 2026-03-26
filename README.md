@@ -328,11 +328,11 @@ Claude no tomó decisiones por sí solo. Todo el código generado fue analizado,
 
 <div align="center">
 
-**MDL**
+**A.D.E.V**
 
 *Proyecto educativo — Módulo 2: Estrategias de Generación de Código con IA · Dicampus*
 
-[![GitHub](https://img.shields.io/badge/GitHub-@tu__usuario-181717?style=for-the-badge&logo=github)](https://github.com/kindred-98/The_Sheldon_ProtocolSpock.git)
+[![GitHub](https://img.shields.io/badge/GitHub-kindred--98-181717?style=for-the-badge&logo=github)](https://github.com/kindred-98)
 
 </div>
 
